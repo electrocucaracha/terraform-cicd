@@ -12,4 +12,4 @@ users:
 runcmd:
   - wget https://raw.githubusercontent.com/electrocucaracha/vagrant-redmine/master/postinstall.sh
   - chmod 755 postinstall.sh
-  - bash postinstall.sh 
+  - bash postinstall.sh ${version}

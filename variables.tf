@@ -36,3 +36,7 @@ variable "external_gateway" {
 variable "floating_pool" {
   default = "GATEWAY_NET"
 }
+
+variable "redmine_version" {
+  default = "3.3.0"
+}

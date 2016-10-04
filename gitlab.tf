@@ -14,7 +14,7 @@ resource "openstack_compute_secgroup_v2" "gitlab_secgroup" {
     from_port = 22
     to_port = 22
     ip_protocol = "tcp"
-    from_group_id = "${openstack_compute_secgroup_v2.jumpbox_secgroup.id}"
+    cidr = "0.0.0.0/0"
   }
   rule {
     from_port = 80
