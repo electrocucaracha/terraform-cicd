@@ -14,6 +14,24 @@ resource "openstack_networking_subnet_v2" "private_subnet01" {
   dns_nameservers = ["8.8.8.8"]
 }
 
+resource "openstack_compute_secgroup_v2" "secgroup" {
+  name = "cicd-secgroup"
+  region = "${var.region}"
+  description = "Security group for accessing to CI/CD environment"
+  rule {
+    from_port = 22
+    to_port = 22
+    ip_protocol = "tcp"
+    cidr = "0.0.0.0/0"
+  }
+  rule {
+    from_port = 80
+    to_port = 80
+    ip_protocol = "tcp"
+    cidr = "0.0.0.0/0"
+  }
+}
+
 resource "openstack_networking_router_v2" "router" {
   name = "cicd-router"
   region = "${var.region}"
