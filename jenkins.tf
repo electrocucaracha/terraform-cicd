@@ -10,6 +10,7 @@ data "template_file" "jenkins_postinstall_script" {
   vars {
     redmine_ip = "${openstack_compute_floatingip_v2.redmine_floatingip.address}"
     redmine_version = "${var.redmine_version}"
+    gerrit_ip = "${openstack_compute_floatingip_v2.gerrit_floatingip.address}"
   }
 }
 

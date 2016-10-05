@@ -12,4 +12,4 @@ users:
 runcmd:
   - wget https://raw.githubusercontent.com/electrocucaracha/vagrant-jenkins/master/postinstall.sh
   - chmod 755 postinstall.sh
-  - bash postinstall.sh ${redmine_ip} ${redmine_version}
+  - bash postinstall.sh ${redmine_ip} ${redmine_version} ${gerrit_ip}
