@@ -37,6 +37,15 @@ variable "floating_pool" {
   default = "GATEWAY_NET"
 }
 
+# Redmine Configuration values
 variable "redmine_version" {
   default = "3.3.0"
+}
+
+variable "root_db_password"{
+  default = "secure"
+}
+
+variable "redmine_db_password"{
+  default = "secure"
 }

@@ -10,6 +10,6 @@ users:
     shell: /bin/bash
 
 runcmd:
-  - wget https://raw.githubusercontent.com/electrocucaracha/vagrant-redmine/master/postinstall.sh
-  - chmod 755 postinstall.sh
-  - bash postinstall.sh ${version}
+  - wget https://raw.githubusercontent.com/electrocucaracha/vagrant-redmine/master/postinstall_db.sh
+  - chmod 755 postinstall_db.sh
+  - bash postinstall_db.sh ${root_db_password} ${redmine_db_password}
