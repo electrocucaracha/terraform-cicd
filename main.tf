@@ -1,8 +1,11 @@
-# Configure OSIC Cloud Provider
-provider "openstack" {
-  user_name     = "${var.user_name}"
-  tenant_name   = "${var.tenant_name}"
-  password      = "${var.password}"
-  auth_url      = "${var.auth_url}"
-  endpoint_type = "publicURL"
+output "gerrit" {
+    value = "http://${openstack_compute_floatingip_v2.gerrit_floatingip.address}"
+}
+
+output "jenkins" {
+    value = "http://${openstack_compute_floatingip_v2.jenkins_floatingip.address}"
+}
+
+output "redmine" {
+    value = "http://${openstack_compute_floatingip_v2.redmine_floatingip.address}"
 }

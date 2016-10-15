@@ -1,6 +1,5 @@
 resource "openstack_compute_floatingip_v2" "redmine_floatingip" {
   depends_on = ["openstack_networking_router_interface_v2.router_interface"]
-  region = "${var.region}"
   pool = "${var.floating_pool}"
 }
 
@@ -17,7 +16,6 @@ data "template_file" "redmine_web_postinstall_script" {
 resource "openstack_compute_instance_v2" "redmine" {
   depends_on = ["openstack_compute_instance_v2.redmine_db"]
   name = "redmine"
-  region = "${var.region}"
   image_name = "${var.image}"
   flavor_name = "${var.flavor}"
   security_groups = [ "${openstack_compute_secgroup_v2.secgroup.name}" ]
@@ -39,7 +37,6 @@ data "template_file" "redmine_db_postinstall_script" {
 
 resource "openstack_compute_instance_v2" "redmine_db" {
   name = "redmine-db"
-  region = "${var.region}"
   image_name = "${var.image}"
   flavor_name = "${var.flavor}"
   user_data = "${data.template_file.redmine_db_postinstall_script.rendered}"
