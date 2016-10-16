@@ -10,6 +10,6 @@ users:
     shell: /bin/bash
 
 runcmd:
-  - wget https://raw.githubusercontent.com/electrocucaracha/vagrant-redmine/master/postinstall_web.sh
+  - wget https://raw.githubusercontent.com/electrocucaracha/terraform-cicd/master/redmine/postinstall_web.sh
   - chmod 755 postinstall_web.sh
   - bash postinstall_web.sh ${version} ${redmine_db_ip} ${redmine_db_password}

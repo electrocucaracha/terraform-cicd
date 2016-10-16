@@ -10,6 +10,6 @@ users:
     shell: /bin/bash
 
 runcmd:
-  - wget https://raw.githubusercontent.com/electrocucaracha/vagrant-redmine/master/postinstall_db.sh
+  - wget https://raw.githubusercontent.com/electrocucaracha/terraform-cicd/master/redmine/postinstall_db.sh
   - chmod 755 postinstall_db.sh
   - bash postinstall_db.sh ${root_db_password} ${redmine_db_password}

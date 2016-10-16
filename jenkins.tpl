@@ -10,6 +10,6 @@ users:
     shell: /bin/bash
 
 runcmd:
-  - wget https://raw.githubusercontent.com/electrocucaracha/vagrant-jenkins/master/postinstall.sh
+  - wget https://raw.githubusercontent.com/electrocucaracha/terraform-cicd/master/jenkins/postinstall.sh
   - chmod 755 postinstall.sh
   - bash postinstall.sh ${redmine_ip} ${redmine_version} ${gerrit_ip}
