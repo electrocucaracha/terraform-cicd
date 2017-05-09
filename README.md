@@ -1,11 +1,20 @@
 CI/CD for everyone else
 =======================
 
-This Terraform project pretends to provision all the OpenStack resources for a Development Infrastructure required for Applications that uses Continuous Integration and Continuos Delivery software cycle.
+Terraform project provision the Cloud Resources needed for developing an
+Application. Its main purpuse is to provide the Infrastructure that follows the
+Continuous Integration and Continuos Delivery(CI/CD) software development cycle.
 
-# Requirements:
+This work was presented during the [OpenStack Summit in Barcelona][1] in 2016.
 
-- [Install Terraform] (https://www.terraform.io/intro/getting-started/install.html)
+# Deployment
+
+These are the requirements and steps needed for deploying this solution into
+production.
+
+## Requirements:
+
+- Install [Terraform][2]
 - Customize according to your OpenStack Provider
 
 ## General OpenStack settings
@@ -70,4 +79,38 @@ Second, you need to configure your Jenkins.
 
 ## Destroy:
 
-    terraform destroy
+    $ terraform destroy
+
+# Development
+
+These are the requirements and steps needed for contributing to this solution.
+
+## Requirements:
+
+- Install [VirtualBox][3] or [libvirt][4]
+- Install [Vagrant][5]
+
+## Steps for provision:
+
+    $ vagrant up
+
+Vagrant is going to execute the following tasks for you.
+
+- Creation of Virtual Machines.
+- Hostname and IP Configuration.
+- Execution of post-install script.
+
+Once all the Virtual Machines are up and running is possible to access them via
+ssh. For example, to access the Database of Redmine:
+
+    $ vagrant ssh redmine_db
+
+## Destroy:
+
+    $ vagrant destroy
+
+[1]: https://www.openstack.org/videos/barcelona-2016/openstack-cicd-for-everyone-else
+[2]: https://www.terraform.io/intro/getting-started/install.html
+[3]: https://www.virtualbox.org/wiki/Downloads
+[4]: http://libvirt.org/downloads.html
+[5]: https://www.vagrantup.com/downloads.html
