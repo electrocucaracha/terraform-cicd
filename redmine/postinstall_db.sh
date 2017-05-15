@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -o xtrace
+
 ROOT_DBPASS=$1
 REDMINE_DBPASS=$2
 

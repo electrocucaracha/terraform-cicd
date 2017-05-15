@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -o xtrace
+
 ROOT_DBPASS=secure
 GERRIT_DBPASS=secure
 gerrit_version=2.12.4

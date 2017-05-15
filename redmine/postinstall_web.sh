@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -o xtrace
+
 version=$1
 redmine_db_ip=$2
 REDMINE_DBPASS=$3

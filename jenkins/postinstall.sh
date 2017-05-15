@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -o xtrace
+
 version=2.25
 filename=jenkins_${version}_all.deb
 
