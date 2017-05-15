@@ -7,17 +7,17 @@ Continuous Integration and Continuos Delivery(CI/CD) software development cycle.
 
 This work was presented during the [OpenStack Summit in Barcelona][1] in 2016.
 
-# Deployment
+## Deployment
 
 These are the requirements and steps needed for deploying this solution into
 production.
 
-## Requirements:
+### Requirements:
 
 - Install [Terraform][2]
 - Customize according to your OpenStack Provider
 
-## General OpenStack settings
+### General OpenStack settings
 
 Terraform OpenStack provider needs environment variables to be set
 before you can run the scripts. In general, you can simply export OS
@@ -33,7 +33,7 @@ export OS_USERNAME=demo
 ```
 Those values depend on the OpenStack Cloud provider.
 
-## Steps for execution:
+### Steps for execution:
 
 ```
 $ git clone https://github.com/electrocucaracha/terraform-cicd.git
@@ -49,9 +49,9 @@ jenkins = http://10.0.0.3
 redmine = http://10.0.0.4
 ```
 
-## Post-configuration
+### Post-configuration
 
-### Redmine Security Realm (authentication):
+#### Redmine Security Realm (authentication):
 
 First you need to get consumer key/secret from Redmine OAuth Provider Plugin.
 
@@ -77,20 +77,24 @@ Second, you need to configure your Jenkins.
 6. Input your Consumer Secret to **Client Secret**.
 7. Click **Save** button.
 
-## Destroy:
+### Destroy:
 
     $ terraform destroy
 
-# Development
+### Resources graph
+
+![Graph](/graph.png "Terraform graph resources")
+
+## Development
 
 These are the requirements and steps needed for contributing to this solution.
 
-## Requirements:
+### Requirements:
 
 - Install [VirtualBox][3] or [libvirt][4]
 - Install [Vagrant][5]
 
-## Steps for provision:
+### Steps for provision:
 
     $ vagrant up
 
@@ -105,7 +109,7 @@ ssh. For example, to access the Database of Redmine:
 
     $ vagrant ssh redmine_db
 
-## Destroy:
+### Destroy:
 
     $ vagrant destroy
 
