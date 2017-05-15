@@ -44,9 +44,9 @@ Apply complete! Resources: 13 added, 0 changed, 0 destroyed.
 ...
 Outputs:
 
-gerrit = http://10.0.0.1
-jenkins = http://10.0.0.2
-redmine = http://10.0.0.3
+gerrit = http://10.0.0.2
+jenkins = http://10.0.0.3
+redmine = http://10.0.0.4
 ```
 
 ## Post-configuration

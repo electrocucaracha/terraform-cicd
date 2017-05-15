@@ -25,7 +25,7 @@ Vagrant.configure("2") do |config|
   end
   config.vm.define :redmine_web do |redmine_web|
     redmine_web.vm.hostname = 'redmine'
-    redmine_web.vm.network :private_network, ip: '192.168.50.3'
+    redmine_web.vm.network :private_network, ip: '10.0.0.3'
     redmine_web.vm.provider "virtualbox" do |v|
       v.customize ["modifyvm", :id, "--memory", 2 * 1024]
     end
@@ -40,7 +40,7 @@ Vagrant.configure("2") do |config|
   end
   config.vm.define :gerrit do |gerrit|
     gerrit.vm.hostname = "gerrit"
-    gerrit.vm.network :private_network, ip: '192.168.50.5'
+    gerrit.vm.network :private_network, ip: '10.0.0.4'
     gerrit.vm.provision 'shell' do |s| 
       s.path = 'gerrit/postinstall.sh'
       s.args = ['127.0.0.1']
@@ -48,10 +48,10 @@ Vagrant.configure("2") do |config|
   end 
   config.vm.define :jenkins do |jenkins|
     jenkins.vm.hostname = "jenkins"
-    jenkins.vm.network :private_network, ip: '192.168.50.6'
+    jenkins.vm.network :private_network, ip: '10.0.0.5'
     jenkins.vm.provision 'shell' do |s| 
       s.path = 'jenkins/postinstall.sh'
-      s.args = ['192.168.50.3', '3.3.0', '192.168.50.5']
+      s.args = ['10.0.0.3', '3.3.0', '10.0.0.4']
     end
   end
 end
